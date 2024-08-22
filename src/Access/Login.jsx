@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Login = () => {
+
+    const [data, setData] = useState()
+    function handleGetData(event) {
+        setData({ ...data, [event.target.name]: event.target.value });
+    }
+
     return (
         <div className="flex h-screen min-h-full  justify-center bg-slate-100 px-6 py-12 lg:px-8">
             <div className='bg-white w-[500px] h-[500px] rounded-lg'>
@@ -16,9 +22,11 @@ const Login = () => {
                         <div>
                             <div className="mt-2">
                                 <input
+                                    onChange={handleGetData}
                                     id="email"
                                     placeholder="example@gmail.com"
                                     name="email"
+                                    value={data?.email || ""}
                                     type="email"
                                     required
                                     autoComplete="email"
@@ -34,6 +42,7 @@ const Login = () => {
                             <div className="mt-2">
                                 <input
                                     id="password"
+                                    value={data?.password || ""}
                                     name="password"
                                     type="password"
                                     placeholder='*****'
