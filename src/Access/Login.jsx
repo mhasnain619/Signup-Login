@@ -1,15 +1,27 @@
 import React, { useState } from 'react'
+import { IoArrowBackCircleOutline } from 'react-icons/io5';
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+    let navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/');
+    };
 
     const [data, setData] = useState()
     function handleGetData(event) {
         setData({ ...data, [event.target.name]: event.target.value });
+
     }
+    console.log(data);
 
     return (
         <div className="flex h-screen min-h-full  justify-center bg-slate-100 px-6 py-12 lg:px-8">
             <div className='bg-white w-[500px] h-[500px] rounded-lg'>
+                <div>
+                    <IoArrowBackCircleOutline onClick={handleClick} className='text-3xl mt-5 text-indigo-600 ml-12 cursor-pointer	' />
+                </div>
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                     <h2 className="mt-10 text-start text-2xl font-bold leading-9 tracking-tight text-indigo-950">
                         Wellcome!
@@ -41,6 +53,7 @@ const Login = () => {
 
                             <div className="mt-2">
                                 <input
+                                    onChange={handleGetData}
                                     id="password"
                                     value={data?.password || ""}
                                     name="password"
