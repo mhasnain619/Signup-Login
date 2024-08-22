@@ -1,12 +1,12 @@
 
-import Login from './Access/Signup/Login/Login'
 import './App.css'
+import Router from './Shell/Router'
 
 function App() {
 
   return (
     <>
-      <Login />
+      <Router />
     </>
   )
 }

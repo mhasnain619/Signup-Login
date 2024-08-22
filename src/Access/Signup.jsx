@@ -1,18 +1,32 @@
 import React from 'react'
 
-const Login = () => {
+const Signup = () => {
     return (
         <div className="flex h-screen min-h-full  justify-center bg-slate-100 px-6 py-12 lg:px-8">
-            <div className='bg-white w-[500px] h-[500px]'>
+            <div className='bg-white w-[500px] h-[500px] rounded-md'>
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                     <h2 className="mt-10 text-start text-2xl font-bold leading-9 tracking-tight text-indigo-950">
-                        Wellcome!
+                        Hi!
                     </h2>
-                    <h5 className='font-bold text-stone-500'>Sign in to continue</h5>
+                    <h5 className='font-bold text-stone-500'>Create New Account</h5>
                 </div>
 
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                     <form action="#" method="POST" className="space-y-6">
+                        <div>
+                            <div className="mt-2">
+                                <input
+                                    id="name"
+                                    placeholder="Name"
+                                    name="name"
+                                    type="text"
+                                    required
+                                    className="block w-full border-0 border-b-2 py-1.5 px-2 text-indigo-950 placeholder:text-gray-400 bg-transparent focus:bg-transparent focus:ring-0 focus:outline-none sm:text-sm sm:leading-6"
+                                />
+
+
+                            </div>
+                        </div>
                         <div>
                             <div className="mt-2">
                                 <input
@@ -48,7 +62,7 @@ const Login = () => {
                                     type="submit"
                                     className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                                 >
-                                    LOGIN
+                                    SIGN UP
                                 </button>
                             </div>
                             <div className="flex items-center justify-between">
@@ -75,4 +89,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Signup
